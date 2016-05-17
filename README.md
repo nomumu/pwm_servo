@@ -5,4 +5,5 @@
 ## pwm_servo
 
 「ROSではじめるホビーロボット＃02」で解説する自作ROSパッケージのサンプルコード一式です．  
+本書はRTロボットショップで入手することが出来ます．  
 <http://www.rt-shop.jp/index.php?main_page=product_info&cPath=1317&products_id=3401>  
