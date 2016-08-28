@@ -146,25 +146,33 @@ include_directories(
 ## My source code settings
 add_executable(servo_server src/servo_server.cpp src/pca9685.cpp src/filter.cpp)
 target_link_libraries(servo_server ${catkin_LIBRARIES} mraa)
-add_dependencies(servo_server pwm_servo_gencfg)
+#add_dependencies(servo_server pwm_servo_gencfg)
+add_dependencies(servo_server ${${PROJECT_NAME}_EXPORTED_TARGETS})
 
 add_executable(servo_client src/servo_client.cpp)
 target_link_libraries(servo_client ${catkin_LIBRARIES})
+add_dependencies(servo_client ${PROJECT_NAME}_generate_messages_cpp)
+add_dependencies(servo_client pwm_servo_gencfg)
 
 add_executable(pose_client src/pose_client.cpp)
 target_link_libraries(pose_client ${catkin_LIBRARIES})
+add_dependencies(pose_client ${PROJECT_NAME}_generate_messages_cpp)
 
 add_executable(logic_client src/logic_client.cpp)
 target_link_libraries(logic_client ${catkin_LIBRARIES})
+add_dependencies(logic_client ${PROJECT_NAME}_generate_messages_cpp)
 
 add_executable(save_client src/save_client.cpp)
 target_link_libraries(save_client ${catkin_LIBRARIES})
+add_dependencies(save_client ${PROJECT_NAME}_generate_messages_cpp)
 
 add_executable(load_client src/load_client.cpp)
 target_link_libraries(load_client ${catkin_LIBRARIES})
+add_dependencies(load_client ${PROJECT_NAME}_generate_messages_cpp)
 
 add_executable(run_client src/run_client.cpp)
 target_link_libraries(run_client ${catkin_LIBRARIES})
+add_dependencies(run_client ${PROJECT_NAME}_generate_messages_cpp)
 
 include_directories(include ${catkin_INCLUDE_DIRS})
 
