@@ -10,7 +10,7 @@ PCA9685_Driver::PCA9685_Driver( uint8_t addr, int i2c_bus_no ) :    // addrはPC
     m_min_usec(DEF_PCA9685_MIN_USEC),                               // 最小角度のPWM幅を初期化
     m_max_usec(DEF_PCA9685_MAX_USEC)                                // 最大角度のPWM幅を初期化
 {
-    mraa_result_t res;
+    mraa::Result res;
 
     m_driver_run = false;                                           // ドライバ動作ステータスを停止で初期化
     interrupt_mtx = PCA9685_MTX_UNLOCK;                             // 排他処理用の変数をUNLOCKで初期化
